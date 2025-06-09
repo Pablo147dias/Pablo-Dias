@@ -54,13 +54,13 @@ const Hero = () => {
               <Grid container display="flex" justifyContent="center" spacing={3} pt={3}>
                 <Grid size={{ xs: 12, md: 4 }} display="flex" justifyContent="center">
                 
-                  <StyledButton >
+                  <StyledButton onClick={() => console.log("Download CV")}>
                     <DownloadIcon />
                         <Typography>Download CV</Typography>
                   </StyledButton >
                 </Grid>
                 <Grid size={{ xs: 12, md: 4 }} display="flex" justifyContent="center">
-                  <StyledButton >
+                  <StyledButton onClick={() => console.log("Contato")}>
                     <EmailIcon />
                     <Typography>Entre em Contato</Typography>
                   </StyledButton >
