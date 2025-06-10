@@ -22,15 +22,15 @@ const About: React.FC = () => {
         <>
             <Container maxWidth="lg">
                 <Box id="about" pt={5} mb={3}>
-                    <Typography variant="h2" textAlign="center" >About me</Typography>
+                    <Typography variant="h2" textAlign="center" >Sobre min</Typography>
                 </Box>
                 <Grid container spacing={2} display="flex" justifyContent="center" pb={3}>
                     <Grid   size={{ xs: 9, md: 2.5 }} >
                         <AnimationComponent moveDirection="right">
                             <StyledCard variant="outlined">
                                 <WorkspacePremiumIcon />
-                                <Typography textAlign="center" fontWeight={600}>Experience</Typography>
-                                <Typography textAlign="center">1+ years</Typography>
+                                <Typography textAlign="center" fontWeight={600}>Experiência</Typography>
+                                <Typography textAlign="center">Mais de 1 ano</Typography>
                                 <Typography textAlign="center">Frontend Development</Typography>
                             </StyledCard>
                         </AnimationComponent>
@@ -39,9 +39,9 @@ const About: React.FC = () => {
                         <AnimationComponent moveDirection="left">
                             <StyledCard variant="outlined">
                                 <SchoolIcon />
-                                <Typography textAlign="center" fontWeight={600}>Education</Typography>
-                                <Typography textAlign="center">Bachelors Degree</Typography>
-                                <Typography textAlign="center">Electrical Engineer</Typography>
+                                <Typography textAlign="center" fontWeight={600}>Formação</Typography>
+                                <Typography textAlign="center">Bacharelado de Ciências da computação</Typography>
+                               
                             </StyledCard>
                         </AnimationComponent>
 
@@ -49,17 +49,11 @@ const About: React.FC = () => {
                 </Grid>
                 <Box pb={1}>
                     <Typography>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Cras porta semper velit vel rutrum.
-                        Aliquam vulputate, nisi eget tristique mattis, nisi sem faucibus eros, a auctor felis sem ut mauris.
-                        Phasellus a ultrices elit.
-                        Curabitur ut diam eu orci auctor pretium.
-                        Nullam ultricies erat quam, eget porta velit vehicula sit amet.
-                        Nullam sodales iaculis metus, sed vestibulum nisl vulputate at.
-                        Integer in pulvinar libero.
-                        Donec ornare est quis tortor varius efficitur.
-                        Maecenas sed erat quis felis facilisis pellentesque.
-                        Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id felis convallis, luctus lorem eget, varius dolor.
+                        Sou Pablo Dias, estudante de Ciência da Computação com foco em desenvolvimento Full Stack. Estou em transição de carreira após experiências profissionais em áreas como logística, montagem, TI e manutenção. Há mais de um ano venho me dedicando intensamente ao estudo de programação, com foco em desenvolvimento web, utilizando tecnologias modernas como HTML, CSS, JavaScript, React, Node.js e bancos de dados relacionais e não relacionais.
+
+Atualmente estudo pela Faculdade Descomplica, e complemento minha formação em plataformas como Alura e Estudonauta. Participo ativamente de projetos pessoais, cursos práticos e desafios de codificação para consolidar o aprendizado. Tenho compromisso com boas práticas de desenvolvimento, versionamento com Git, organização de código e resolução de problemas de forma lógica e eficiente.
+
+Meu objetivo é atuar como estagiário ou desenvolvedor júnior em uma equipe colaborativa, onde possa aplicar meus conhecimentos, aprender com profissionais mais experientes e contribuir de forma concreta para o crescimento dos projetos. Estou preparado para lidar com responsabilidades, prazos e a constante evolução que a área de tecnologia exige.
                     </Typography>
                 </Box>
                 <hr />
