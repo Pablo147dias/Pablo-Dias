@@ -12,24 +12,24 @@ const ProjectsSection: React.FC = () => {
 
     const projects = [
         {
-            title: "Project Exemple",
-            subtitle: "Jul 2023 - Dez 2023",
-            srcImg: "/src/assets/images/project-trello.png",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porta semper velit vel rutrum. Aliquam vulputate, nisi eget tristique mattis, nisi sem faucibus eros, a auctor felis sem ut mauris. Phasellus a ultrices elit. Curabitur ut diam eu orci auctor pretium.",
-            technologies: "Technologies: JavaScript, HTML, CSS, Canvas Graphics",
-            websiteURL: "https://trello.com/",
-            codeURL: "https://github.com/",
+            title: "Organo",
+            subtitle: "maio 2025 - jun 2025",
+            srcImg: "/src/assets/images/organo.png",
+            description: "Este é um projeto desenvolvido durante os cursos de React da [Alura], com o objetivo de praticar conceitos de front-end, componentização, manipulação de estados e estilização em ReactJS. Este projeto é uma aplicação de gerenciamento de tarefas, semelhante ao Trello, onde os usuários podem criar, editar e excluir cartões em diferentes colunas.",
+            technologies: "Technologies: JavaScript,React, UUID, HTML, CSS, Figma",
+            websiteURL: "https://pablo147dias.github.io/organo/",
+            codeURL: "https://github.com/Pablo147dias/organo",
         },
         {
             title: "Project Exemple",
             subtitle: "Jul 2023 - Dez 2023",
             srcImg: "/src/assets/images/project-financas.png",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras porta semper velit vel rutrum. Aliquam vulputate, nisi eget tristique mattis, nisi sem faucibus eros, a auctor felis sem ut mauris. Phasellus a ultrices elit. Curabitur ut diam eu orci auctor pretium.",
-            technologies: "Technologies: JavaScript, HTML, CSS, Canvas Graphics",
-            websiteURL: "https://trello.com/",
-            codeURL: "https://github.com/",
+            technologies: "Tecnologias: JavaScript, HTML, CSS, Canvas Graphics",
+            websiteURL: "https://pablo147dias.github.io/organo/",
+            codeURL: "https://github.com/Pablo147dias/organo",
         },
-        {
+        /*{
             title: "Project Craze Maze",
             subtitle: "Jul 2019 - May 2019",
             srcImg: "/src/assets/images/project1-craze-maze.gif",
@@ -46,7 +46,7 @@ const ProjectsSection: React.FC = () => {
             technologies: "Technologies: JavaScript, HTML, CSS, Canvas Graphics",
             websiteURL: "https://adrianasaty.github.io/ironhack-project1-craze-maze/index.html",
             codeURL: "https://github.com/AdrianaSaty/ironhack-project1-craze-maze",
-        },
+        },*/
     ]
 
     return (

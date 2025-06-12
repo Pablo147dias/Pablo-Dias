@@ -28,7 +28,7 @@ const About: React.FC = () => {
                     <Grid   size={{ xs: 9, md: 2.5 }} >
                         <AnimationComponent moveDirection="right">
                             <StyledCard variant="outlined">
-                                <WorkspacePremiumIcon />
+                                <WorkspacePremiumIcon /> 
                                 <Typography textAlign="center" fontWeight={600}>Experiência</Typography>
                                 <Typography textAlign="center">Mais de 1 ano</Typography>
                                 <Typography textAlign="center">Frontend Development</Typography>
