@@ -2,6 +2,8 @@ import { Box, Container, Grid, Typography, styled } from "@mui/material";
 import ProjectCard from "../../../../components/ProjectCard/ProjectCard";
 import AnimationComponent from "../../../../components/AnimationComponent/AnimationComponent";
 import type {ProjectCardProps}  from "../../../../components/ProjectCard/ProjectCard";
+import orgaoImg from '../../../../assets/images/organo.png';
+import codeconnectImg from '../../../../assets/images/codeconnect.png';
 
 const ProjectsSection: React.FC = () => {
 
@@ -14,7 +16,7 @@ const ProjectsSection: React.FC = () => {
         {
             title: "Organo",
             subtitle: "maio 2025 - jun 2025",
-            srcImg: "/public/imagens/organo.png",
+            srcImg: orgaoImg,
             description: "Este é um projeto desenvolvido durante os cursos de React da [Alura], com o objetivo de praticar conceitos de front-end, componentização, manipulação de estados e estilização em ReactJS. Este projeto é uma aplicação de gerenciamento de tarefas, semelhante ao Trello, onde os usuários podem criar, editar e excluir cartões em diferentes colunas.",
             technologies: "Technologies: JavaScript,React, UUID, HTML, CSS, Figma",
             websiteURL: "https://pablo147dias.github.io/organo/",
@@ -23,7 +25,7 @@ const ProjectsSection: React.FC = () => {
         {
             title: "Code-Connect feed",
             subtitle: "maio 2025 - maio 2025",
-            srcImg: "/public/imagens/codeconnect.png",
+            srcImg: codeconnectImg,
             description: "Este é um projeto desenvolvido durante os cursos de React da [Alura], com o objetivo de praticar conceitos de front-end, componentização, manipulação de estados e estilização em ReactJS. Este projeto é uma aplicação de feed social, onde os usuários podem visualizar postagens, interagir com elas e compartilhar conteúdo.",
             technologies: "Tecnologias: JavaScript, HTML, CSS, Canvas, React, Figma",
             websiteURL: "https://pablo147dias.github.io/codeconnect-feed/",
