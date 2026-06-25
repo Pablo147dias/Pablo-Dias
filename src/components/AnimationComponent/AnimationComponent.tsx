@@ -1,30 +1,10 @@
-import { keyframes } from "@emotion/react"
-import { styled } from "@mui/system";
-import {  useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
 
 interface AnimationComponentProps {
     children: ReactNode,
     moveDirection: "left" | "right"
 }
-
-const moveFromLeftToRight = keyframes`
-0% {
-    transform: translateX(-20vw);
-  }
-  100% {
-    transform: translateX(0);
-  }
-    `
-
-const moveFromRightToLeft = keyframes`
-0% {
-    transform: translateX(20vw);
-  }
-  100% {
-    transform: translateX(0);
-  }
-    `
 
 const AnimationComponent: React.FC<AnimationComponentProps> = ({ children, moveDirection }) => {
 
@@ -49,21 +29,22 @@ const AnimationComponent: React.FC<AnimationComponentProps> = ({ children, moveD
         };
     }, []);
 
-    const StyledAnimationComponent = styled("div")<{ startAnimation: boolean, moveDirection: string }>(({ startAnimation, moveDirection }) => ({
-        animation: startAnimation ? `${moveDirection} 1s linear` : "none"
-    }));
+    const animationClass = startAnimation
+        ? moveDirection === "right"
+            ? "animate-slide-right"
+            : "animate-slide-left"
+        : "opacity-0";
 
     return (
-        <StyledAnimationComponent
+        <div
             ref={componentRef}
-            startAnimation={startAnimation}
-            moveDirection={
-                moveDirection === "right" ? moveFromLeftToRight : moveFromRightToLeft
-            }
+            className={animationClass}
         >
             {children}
-        </StyledAnimationComponent>
+        </div>
     )
 }
 
 export default AnimationComponent
+
+

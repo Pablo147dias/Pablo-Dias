@@ -1,79 +1,80 @@
-import { Box, Card, Container, Grid, Typography, styled } from "@mui/material"
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import SchoolIcon from '@mui/icons-material/School';
 import AnimationComponent from "../../../../components/AnimationComponent/AnimationComponent";
 
 const About: React.FC = () => {
 
-    const StyledCard = styled(Card)(({ theme }) => ({
-        padding: "10px 10px",
-        textAlign: "center",
-        marginBottom: "10px",
-        '&:hover': {
-            backgroundColor: theme.palette.secondary.light
-        }
-    }));
-
     const skillsSet = [
-        "Javascript", "Typescript", "React", "Next", "Git", "HTML", "CSS", "Inglês", "Material UI", "CNH:AB" , "Figma"
+        "Javascript", "Typescript", "React", "Next", "Git", "HTML", "CSS", "Inglês", "Material UI", "CNH:AB", "Figma", "Tailwind"
     ]
 
     return (
-        <>
-            <Container maxWidth="lg">
-                <Box id="about" pt={5} mb={3}>
-                    <Typography variant="h2" textAlign="center" >Sobre min</Typography>
-                </Box>
-                <Grid container spacing={2} display="flex" justifyContent="center" pb={3}>
-                    <Grid   size={{ xs: 9, md: 2.5 }} >
-                        <AnimationComponent moveDirection="right">
-                            <StyledCard variant="outlined">
-                                <WorkspacePremiumIcon /> 
-                                <Typography textAlign="center" fontWeight={600}>Experiência</Typography>
-                                <Typography textAlign="center">Mais de 1 ano</Typography>
-                                <Typography textAlign="center">Frontend Development</Typography>
-                            </StyledCard>
-                        </AnimationComponent>
-                    </Grid>
-                    <Grid size={{ xs: 9, md: 2.5 }}>
-                        <AnimationComponent moveDirection="left">
-                            <StyledCard variant="outlined">
-                                <SchoolIcon />
-                                <Typography textAlign="center" fontWeight={600}>Formação</Typography>
-                                <Typography textAlign="center">Bacharelado de Ciências da computação</Typography>
-                               
-                            </StyledCard>
-                        </AnimationComponent>
+        <section className="bg-slate-900 py-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                {/* About Title */}
+                <div id="about" className="mb-12">
+                    <h2 className="text-4xl md:text-5xl font-bold text-center text-white">
+                        Sobre Mim
+                    </h2>
+                </div>
 
-                    </Grid>
-                </Grid>
-                <Box pb={1}>
-                    <Typography>
+                {/* Experience and Education Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                    <AnimationComponent moveDirection="right">
+                        <div className="border-2 border-emerald-600 border-opacity-30 rounded-xl p-8 bg-slate-900 hover:bg-slate-700 transition-all duration-300 text-center">
+                            <WorkspacePremiumIcon sx={{ fontSize: 40, color: "#4f8e3e", marginBottom: "1rem" }} />
+                            <h3 className="text-xl font-bold text-white mb-2">Experiência</h3>
+                            <p className="text-emerald-500 font-semibold mb-2">Mais de 1 ano</p>
+                            <p className="text-gray-300">Frontend Development</p>
+                        </div>
+                    </AnimationComponent>
+
+                    <AnimationComponent moveDirection="left">
+                        <div className="border-2 border-emerald-600 border-opacity-30 rounded-xl p-8 bg-slate-900 hover:bg-slate-700 transition-all duration-300 text-center">
+                            <SchoolIcon sx={{ fontSize: 40, color: "#4f8e3e", marginBottom: "1rem" }} />
+                            <h3 className="text-xl font-bold text-white mb-2">Formação</h3>
+                            <p className="text-gray-300">Bacharelado em Ciências da Computação</p>
+                            <p className="text-gray-400 text-sm">Faculdade Descomplica</p>
+                        </div>
+                    </AnimationComponent>
+                </div>
+
+                {/* Bio */}
+                <div className="max-w-3xl mx-auto mb-12">
+                    <p className="text-gray-300 text-center leading-relaxed text-base md:text-lg">
                         Sou Pablo Dias, estudante de Ciência da Computação com foco em desenvolvimento Full Stack. Estou em transição de carreira após experiências profissionais em áreas como logística, montagem, TI e manutenção. Há mais de um ano venho me dedicando intensamente ao estudo de programação, com foco em desenvolvimento web, utilizando tecnologias modernas como HTML, CSS, JavaScript, React, Node.js e bancos de dados relacionais e não relacionais.
+                    </p>
+                    <p className="text-gray-300 text-center leading-relaxed text-base md:text-lg mt-4">
+                        Atualmente estudo pela Faculdade Descomplica, e complemento minha formação em plataformas como Alura e Estudonauta. Participo ativamente de projetos pessoais, cursos práticos e desafios de codificação para consolidar o aprendizado. Tenho compromisso com boas práticas de desenvolvimento, versionamento com Git, organização de código e resolução de problemas de forma lógica e eficiente.
+                    </p>
+                    <p className="text-gray-300 text-center leading-relaxed text-base md:text-lg mt-4">
+                        Meu objetivo é atuar como estagiário ou desenvolvedor júnior em uma equipe colaborativa, onde possa aplicar meus conhecimentos, aprender com profissionais mais experientes e contribuir de forma concreta para o crescimento dos projetos. Estou preparado para lidar com responsabilidades, prazos e a constante evolução que a área de tecnologia exige.
+                    </p>
+                </div>
 
-Atualmente estudo pela Faculdade Descomplica, e complemento minha formação em plataformas como Alura e Estudonauta. Participo ativamente de projetos pessoais, cursos práticos e desafios de codificação para consolidar o aprendizado. Tenho compromisso com boas práticas de desenvolvimento, versionamento com Git, organização de código e resolução de problemas de forma lógica e eficiente.
+                <hr className="border-emerald-600 border-opacity-20 mb-12" />
 
-Meu objetivo é atuar como estagiário ou desenvolvedor júnior em uma equipe colaborativa, onde possa aplicar meus conhecimentos, aprender com profissionais mais experientes e contribuir de forma concreta para o crescimento dos projetos. Estou preparado para lidar com responsabilidades, prazos e a constante evolução que a área de tecnologia exige.
-                    </Typography>
-                </Box>
-                <hr />
-                <Box id="skills" pt={1} mb={3}>
-                    <Typography variant="h3" textAlign="center" fontWeight={300}>Skills</Typography>
-                </Box>
-                <Box mb={5}>
-                    <Grid container spacing={3} justifyContent="center">
+                {/* Skills Section */}
+                <div id="skills" className="mb-12">
+                    <h3 className="text-3xl md:text-4xl font-bold text-center text-white mb-10">
+                        Skills
+                    </h3>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
                         {skillsSet.map((skill, index) => (
-                            <Grid size={{ xs: 5, md: 2, sm:4, lg:2, }} key={index} >
-                                <StyledCard variant="outlined">
-                                    {skill}
-                                </StyledCard>
-                            </Grid>
+                            <div
+                                key={index}
+                                className="border-2 border-emerald-600 border-opacity-30 rounded-lg p-4 bg-slate-900 hover:bg-slate-700 transition-all duration-300 text-center cursor-pointer hover:border-emerald-600 hover:shadow-lg hover:shadow-accent-green/20"
+                            >
+                                <p className="text-white font-medium">{skill}</p>
+                            </div>
                         ))}
-                    </Grid>
-                </Box>
-            </Container>
-        </>
+                    </div>
+                </div>
+            </div>
+        </section>
     )
 }
 
 export default About
+
+

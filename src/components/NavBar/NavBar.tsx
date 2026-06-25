@@ -1,105 +1,74 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
-import { styled } from '@mui/material';
-
-export const StyledNavLink = styled("a")(() => ({
-    textDecoration: "none",
-    color: "inherit"
-}));
-
-export const StyledMobileToolbar = styled(Toolbar)(({ theme }) => ({
-    [theme.breakpoints.up('xs')]: {
-        display: "flex",
-        justifyContent: "end"
-    },
-    [theme.breakpoints.up('md')]: {
-        display: "none",
-    },
-}));
-
-export const StyledDesktopToolbar = styled(Toolbar)(({ theme }) => ({
-    [theme.breakpoints.up('xs')]: {
-        display: "none",
-    },
-    [theme.breakpoints.up('md')]: {
-        display: "flex",
-        justifyContent: "space-evenly",
-    },
-}));
+import CloseIcon from '@mui/icons-material/Close';
 
 export default function Navbar() {
-    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-
-    const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
+    const [isOpen, setIsOpen] = React.useState(false);
 
     const handleSmoothScroll = (id: string) => {
         const element = document.getElementById(id);
         if (element) {
             element.scrollIntoView({ behavior: "smooth" });
-            handleClose();
+            setIsOpen(false);
         }
     };
 
+    const navItems = [
+        { label: "About", id: "about" },
+        { label: "Skills", id: "skills" },
+        { label: "Projects", id: "projects" },
+    ];
+
     return (
-        <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="absolute">
-                <StyledMobileToolbar>
-                    <IconButton
-                        size="large"
-                        aria-label="account of current user"
-                        aria-controls="menu-appbar"
-                        aria-haspopup="true"
-                        onClick={handleMenu}
-                        color="inherit"
+        <nav className="fixed w-full bg-slate-900 bg-opacity-95 backdrop-blur-md z-50 border-b border-emerald-600 border-opacity-20">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex justify-between items-center h-16">
+                    {/* Logo */}
+                    <div className="text-2xl font-bold text-emerald-500 ">Pablo Dias</div>
+
+                    {/* Desktop Menu */}
+                    <div className="hidden md:flex gap-8">
+                        {navItems.map((item) => (
+                            <button
+                                key={item.id}
+                                onClick={() => handleSmoothScroll(item.id)}
+                                className="text-white hover:text-emerald-500 transition-colors duration-300 font-medium"
+                            >
+                                {item.label}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Mobile Menu Button */}
+                    <button
+                        onClick={() => setIsOpen(!isOpen)}
+                        className="md:hidden text-white"
                     >
-                        <MenuIcon />
-                    </IconButton>
-                    <Menu
-                        id="menu-appbar"
-                        anchorEl={anchorEl}
-                        anchorOrigin={{
-                            vertical: 'top',
-                            horizontal: 'right',
-                        }}
-                        keepMounted
-                        open={Boolean(anchorEl)}
-                        onClose={handleClose}
-                    >
-                        <MenuItem onClick={() => handleSmoothScroll("about")}>
-                            <StyledNavLink>About</StyledNavLink>
-                        </MenuItem>
-                        <MenuItem onClick={() => handleSmoothScroll("skills")}>
-                            <StyledNavLink>Skills</StyledNavLink>
-                        </MenuItem>
-                        <MenuItem onClick={() => handleSmoothScroll("projects")}>
-                            <StyledNavLink>Projects</StyledNavLink>
-                        </MenuItem>
-                    </Menu>
-                </StyledMobileToolbar>
-                <StyledDesktopToolbar variant="regular">
-                    <MenuItem onClick={() => handleSmoothScroll("about")}>
-                        <StyledNavLink>About</StyledNavLink>
-                    </MenuItem>
-                    <MenuItem onClick={() => handleSmoothScroll("skills")}>
-                        <StyledNavLink>Skills</StyledNavLink>
-                    </MenuItem>
-                    <MenuItem onClick={() => handleSmoothScroll("projects")}>
-                        <StyledNavLink>Projects</StyledNavLink>
-                    </MenuItem>
-                </StyledDesktopToolbar>
-            </AppBar>
-        </Box >
+                        {isOpen ? (
+                            <CloseIcon fontSize="large" />
+                        ) : (
+                            <MenuIcon fontSize="large" />
+                        )}
+                    </button>
+                </div>
+
+                {/* Mobile Menu */}
+                {isOpen && (
+                    <div className="md:hidden pb-4 border-t border-emerald-600 border-opacity-20">
+                        {navItems.map((item) => (
+                            <button
+                                key={item.id}
+                                onClick={() => handleSmoothScroll(item.id)}
+                                className="block w-full text-left px-4 py-2 text-white hover:text-emerald-500 hover:bg-slate-900 transition-all duration-300"
+                            >
+                                {item.label}
+                            </button>
+                        ))}
+                    </div>
+                )}
+            </div>
+        </nav>
     );
 }
+
+

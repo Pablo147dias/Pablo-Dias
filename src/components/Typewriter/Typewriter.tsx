@@ -29,3 +29,5 @@ const Typewriter: React.FC<TypewriterProps> = ({ text, delay, variant, color }) 
 }
 
 export default Typewriter
+
+

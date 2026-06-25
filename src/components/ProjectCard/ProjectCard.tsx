@@ -1,4 +1,3 @@
-import { Grid, Typography, styled } from "@mui/material";
 import StyledButton from "../StyledButttons/StyleButton";
 
 export interface ProjectCardProps {
@@ -20,53 +19,37 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     websiteURL,
     codeURL
 }) => {
-
-    const StyledImg = styled("img")(({ theme }) => ({
-        width: "100%",
-        objectFit: "contain",
-        height: "80vw",
-        padding: "10px 0",
-        [theme.breakpoints.up('md')]: {
-            height: "45vh",
-        },
-    }));
-
-    const StyledCard = styled("div")(({ theme }) => ({
-        borderRadius: "3px",
-        border: `0.5px solid  ${theme.palette.primary.contrastText}`,
-        backgroundColor: "transparent",
-        color: theme.palette.primary.contrastText,
-        padding: "20px",
-        '&:hover': {
-            backgroundColor: theme.palette.primary.light
-        }
-    }));
-
     return (
-        <StyledCard>
-            <Typography variant="h5">
+        <div className="border-2 border-emerald-600 border-opacity-30 rounded-xl p-6 bg-slate-900 hover:bg-slate-700 transition-all duration-300 hover:shadow-lg hover:shadow-accent-green/20">
+            <h3 className="text-2xl font-bold text-white mb-1">
                 {title}
-            </Typography>
-            <Typography >
+            </h3>
+            <p className="text-emerald-500 text-sm mb-4">
                 {subtitle}
-            </Typography>
-            <StyledImg src={srcImg} />
-            <Typography>
+            </p>
+            <img
+                src={srcImg}
+                alt={title}
+                className="w-full rounded-lg mb-4 object-cover h-64"
+            />
+            <p className="text-gray-300 text-base mb-4 leading-relaxed">
                 {description}
-            </Typography>
-            <Typography fontWeight={600} pt={2}>
+            </p>
+            <p className="text-emerald-500 font-semibold mb-4 text-sm">
                 {technologies}
-            </Typography>
-            <Grid container spacing={1} pt={2}>
-                <Grid size={{ xs: 6 }}>
-                    <StyledButton onClick={() => window.open(websiteURL)}>Exibir Projeto</StyledButton>
-                </Grid>
-                <Grid size={{ xs: 6 }}>
-                    <StyledButton onClick={() => window.open(codeURL)}>Exibir Código</StyledButton>
-                </Grid>
-            </Grid>
-        </StyledCard>
+            </p>
+            <div className="grid grid-cols-2 gap-3">
+                <StyledButton onClick={() => window.open(websiteURL)}>
+                    Ver Projeto
+                </StyledButton>
+                <StyledButton onClick={() => window.open(codeURL)}>
+                    Ver Código
+                </StyledButton>
+            </div>
+        </div>
     )
 }
 
 export default ProjectCard
+
+

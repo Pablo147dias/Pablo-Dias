@@ -10,14 +10,15 @@ const App = () => {
 
 
   return (
-    <>
+    <div className="bg-slate-900 text-white">
     <NavBar />
      <Hero/>
      <About />
      <ProjectsSection />
      <Footer />
-    </>
+    </div>
   )
 }
 
 export default App
+
